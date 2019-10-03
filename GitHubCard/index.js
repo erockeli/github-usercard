@@ -113,10 +113,47 @@ function cardGenerator(obj) {
   nameP.classList.add("username");
   nameP.textContent = obj.login;
 
+  let locationP = document.createElement("p");
+  locationP.textContent = `Location: ${obj.location}`;
+
+  let profileP = document.createElement("p");
+  profileP.textContent = `Profile:`;
+
+  let profileAnchor = document.createElement("a");
+  profileAnchor.href = obj.html_url;
+
+  profileP.appendChild(profileAnchor);
+
+  let followersP = document.createElement("p");
+  followersP.textContent = obj.followers;
+
+  let followingP = document.createElement("p");
+  followingP.textContent = obj.following;
+
+  let bioP = document.createElement("p");
+  bioP.textContent = `Bio: ${obj.bio}`;
+
+  let chartImg = document.createElement('img');
+  chartImg.src = `http://ghchart.rshah.org/${obj.login}`;
+  chartImg.style.width = "100%";
+
+  cardInfo.appendChild(h3);
+  cardInfo.appendChild(nameP);
+  cardInfo.appendChild(locationP);
+  cardInfo.appendChild(profileP);
+  cardInfo.appendChild(followersP);
+  cardInfo.appendChild(followingP);
+  cardInfo.appendChild(bioP);
+  cardInfo.appendChild(chartImg);
+
+  cardDiv.appendChild(avatarImg);
+  cardDiv.appendChild(cardInfo);
+
+  cardsDivOnHTML.appendChild(cardDiv);
+}
 
 
 
-  
 /* List of LS Instructors Github username's: 
   tetondan
   dustinmyers
