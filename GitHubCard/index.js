@@ -65,7 +65,12 @@ function axiosFunction(username){
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = [
+"Elijah",
+"Lex",
+"Luke",
+"New"
+];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -87,6 +92,31 @@ const followersArray = [];
 
 */
 
+let cardsDivOnHTML = document.querySelector(".cards");
+
+function cardGenerator(obj) {
+  // console.log(obj);
+  let cardDiv = document.createElement("div");
+  cardDiv.classList.add("card");
+
+  let avatarImg = document.createElement("img");
+  avatarImg.src = obj.avatar_url;
+
+  let cardInfo = document.createElement("div");
+  cardInfo.classList.add("card-info");
+
+  let h3 = document.createElement("h3");
+  h3.classList.add("name");
+  h3.textContent = obj.name;
+
+  let nameP = document.createElement("p");
+  nameP.classList.add("username");
+  nameP.textContent = obj.login;
+
+
+
+
+  
 /* List of LS Instructors Github username's: 
   tetondan
   dustinmyers
